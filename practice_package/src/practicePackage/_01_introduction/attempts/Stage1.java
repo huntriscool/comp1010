@@ -9,7 +9,7 @@ public class Stage1 {
 	 * @return the cube of n
 	 */
 	public static int cube(int n) {
-		return 0; //to be completed
+		return n*n*n; //to be completed
 	}
 
 	/**
@@ -18,7 +18,7 @@ public class Stage1 {
 	 * @return the last digit of the number n
 	 */
 	public static int lastDigit(int n) {
-		return 0; //to be completed
+		return n%10; 
 	}
 
 	/**
@@ -27,7 +27,12 @@ public class Stage1 {
 	 * @return true if n is even (divisible by 2), false otherwise
 	 */
 	public static boolean isEven(int n) {
-		return false; //to be completed
+		if(n%2==0) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/**
@@ -38,7 +43,12 @@ public class Stage1 {
 	 * @return the value that is even
 	 */
 	public static int evenOne(int a, int b) {
-		return 0; //to be completed
+		if(a%2==0) {
+			return a;
+		}
+		else {
+			return b;
+		}
 	}
 
 	/**
@@ -49,6 +59,14 @@ public class Stage1 {
 	 * @return the highest of the three integers passed
 	 */
 	public static int highest(int a, int b, int c) {
-		return 0; //to be completed
+		if (a >= b && a >= c) {
+			return a;
+		}
+		else if (b >= a && b >= c) {
+			return b;
+		}
+		else {
+			return c;
+		}
 	}
 }

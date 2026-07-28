@@ -14,7 +14,16 @@ public class Stage2 {
 	 * lastDigit(8) = 8
 	 */
 	public static int lastDigit(int n) {
-		return 0; //to be completed
+		if (n < 0) {
+			return -1 * (n % 10); //to be completed
+		}
+		else if (n == 0) {
+			return 0; //to be completed
+		}
+		else {
+			return n % 10; //to be completed
+		}
+		
 	}
 
 	/**
@@ -25,7 +34,7 @@ public class Stage2 {
 	 * For example, absolute(-6) = 6, absolute(9) = 9
 	 */
 	public static int absolute(int n) {
-		return 0; //to be completed
+		return Math.abs(n);
 	}
 
 	/**
@@ -40,7 +49,18 @@ public class Stage2 {
 	 * 
 	 */
 	public static int getQuadrant(int x, int y) {
-		return 0; //to be completed
+		if (x >= 0 && y >= 0) {
+			return 1;
+		}
+		else if (x < 0 && y >= 0) {
+			return 2;
+		}
+		else if (x < 0 && y < 0) {
+			return 3;
+		}
+		else {
+			return 4;
+		}
 	}
 
 	/**
@@ -51,7 +71,7 @@ public class Stage2 {
 	 * For example, floor(4.2) = 4, floor(7.0) = 7, floor(5.9999) = 5
 	 */
 	public static int floor(double val) {
-		return 0; //to be completed
+		return 0;
 	}
 
 	/**
