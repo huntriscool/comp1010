@@ -9,8 +9,12 @@ public class Stage3 {
 	 * @return the sum of the first n positive EVEN integers (2+4+...+(2*n))
 	 */
 	public static int sumEvenV1(int n) {
-		return 0; //to be completed 
-	}
+    int total = 0;
+    for (int i = 1; i <= n; i++) {
+        total += 2 * i;
+    }
+    return total;
+}
 
 	/**
 	 * 
@@ -19,7 +23,14 @@ public class Stage3 {
 	 * either (2+4+...+n) or (2+4+...+(n-1))
 	 */
 	public static int sumEvenV2(int n) {
-		return 0; //to be completed	
+		int count = 0;
+		for (int i = 0; i <= n; i++) {
+			if (i % 2 == 0) {
+				count += i;
+			}
+			
+		}
+		return count;
 	}
 
 	/**
@@ -30,7 +41,15 @@ public class Stage3 {
 	 * return 1 if n < 1
 	 */
 	public static int product(int n) {
-		return 0; //to be completed
+		int count = 1;
+		if (n < 1) {
+			return 1;
+		} else {
+			for (int i = 1; i <= n; i++) {
+				count *= i;
+			}
+			return count;
+		}
 	}
 
 	/**
@@ -41,8 +60,17 @@ public class Stage3 {
 	 * return 1 if n < 1
 	 */
 	public static int productOdd(int n) {
-		return 0; //to be completed
+		int count = 1;
+		if (n < 1) {
+			return 1;
+		} else {
+			for (int i = 1; i <= n; i++) {
+					count *= (2*i-1);
+			}
+			return count;
+		}
 	}
+	
 
 	/**
 	 * 
@@ -51,7 +79,11 @@ public class Stage3 {
 	 * @return x to the power of n without using Math library
 	 */
 	public static int power(int x, int n) {
-		return 0; //to be completed
+		int total = 1;
+		for (int i = 1; i <= n; i++) {
+			total = total * x;
+		}
+		return total;
 	}
 
 	/**
@@ -60,7 +92,12 @@ public class Stage3 {
 	 * @return the sum of all even numbers in data
 	 */
 	public static int sumEven(int[] data) {
-		return 0; //to be completed
-
+		int count = 0;
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] % 2 == 0) {
+				count += data[i];
+			}
+		}
+		return count;
 	}
 }

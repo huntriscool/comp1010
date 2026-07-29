@@ -10,7 +10,13 @@ public class Stage4 {
 	 * @return the LAST index at which target exists in data, -1 if it doesn't exist
 	 */
 	public static int lastIndexOf(int[] data, int target) {
-		return -1; //to be completed
+		int count = 0;
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] == target) {
+				count = i;
+			}
+			}
+		return count;
 	}
 
 	/**
