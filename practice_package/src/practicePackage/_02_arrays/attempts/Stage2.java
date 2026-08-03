@@ -31,7 +31,16 @@ public class Stage2 {
 	 * return 0 if the array is null
 	 */
 	public static int sumPositives(int[] data) {
-		return 0; //to be completed
+		int total = 0;
+		if (data == null || data.length < 0) {
+			return 0;
+		}
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] > 0) {
+				total += data[i];
+			}
+		}
+		return total;
 	}
 
 	/**
@@ -42,7 +51,16 @@ public class Stage2 {
 	 * return 0 if the array is null
 	 */
 	public static int sumMultiples(int[] data, int n) {
-		return 0; //to be completed
+		int total = 0;
+		if (data == null || data.length < 0) {
+			return 0;
+		}
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] % n == 0) {
+				total += data[i];
+			}
+		}
+		return total;
 	}
 
 	/**
@@ -53,7 +71,16 @@ public class Stage2 {
 	 * @return sum of all items of the array passed that lie in the number range [low...high]
 	 */
 	public static int sumInRange(int[] data, int low, int high) {
-		return 0; //to be completed
+		int total = 0;
+		if (data == null || data.length < 0) {
+			return 0;
+		}
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] >= low && data[i] <= high) {
+				total += data[i];
+			}
+		}
+		return total;
 	}
 
 	/**
@@ -62,7 +89,14 @@ public class Stage2 {
 	 * @return the sum of all items at even indices of the array passed
 	 */
 	public static int sumEvenIndexedItems(int[] data) {
-		return 0; //to be completed
+		int total = 0;
+		if (data == null || data.length < 0) {
+			return 0;
+		}
+		for (int i = 0; i < data.length; i+=2) {
+			total += data[i];
+		}
+		return total;
 	}
 
 	/**
@@ -71,7 +105,15 @@ public class Stage2 {
 	 * reset any negative value(s) in the array passed to zero.
 	 */
 	public static void resetNegatives(int[] data) {
-		//to be completed
+		if (data == null || data.length <= 0) {
+			
+		} else {
+			for (int i = 0; i < data.length; i++) {
+				if (data[i] < 0) {
+					data[i] = 0;
+				}
+			}
+		}
 	}
 
 	/**

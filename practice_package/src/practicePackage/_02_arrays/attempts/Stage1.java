@@ -50,7 +50,11 @@ public class Stage1 {
 	 * otherwise return the last item
 	 */
 	public static int getLastItem(int[] data) {
-		return 0; //to be completed
+		if (data == null || data.length <= 0) {
+			return 0;
+		} else {
+			return data[data.length - 1];
+		}
 	}
 
 	/**
@@ -62,7 +66,14 @@ public class Stage1 {
 	 * otherwise return false
 	 */
 	public static boolean secondLastLessThanLast(int[] data) {
-		return false; //to be completed
+		if(data == null || data.length < 2){
+			return false;
+		} else {
+			if (data[data.length - 2] < data[data.length - 1]) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -72,7 +83,11 @@ public class Stage1 {
 	 * otherwise return the sum of the first and the last items 
 	 */
 	public static int getSumFirstLastItems(int[] data) {
-		return 0; //to be completed
+		if (data == null || data.length < 2) {
+			return 0;
+		} else {
+			return data[0] + data[data.length - 1];
+		}
 	}
 
 	/**
@@ -84,7 +99,11 @@ public class Stage1 {
 	 * return 0 otherwise
 	 */
 	public static int get(int[] data, int idx) {
-		return 0; //to be completed
+		if (data == null || idx < 0 || idx >= data.length) {
+			return 0;
+		} else {
+			return data[idx];
+		}
 	}
 
 	/**
@@ -95,6 +114,10 @@ public class Stage1 {
 	 * return false if either is null
 	 */
 	public static boolean sameSize(int[] a, int[] b) {
-		return false; //to be completed
+		if(a == null || b == null) return false;
+		if (a.length == b.length) {
+			return true;
+		}
+		return false;
 	}
 }
