@@ -1,6 +1,6 @@
-#ARRAY LISTS!!!!!
+# ARRAY LISTS!!!!!
 
-##Array lists can:
+## Array lists can:
 - Grow (u can keep adding elements to the list) // listName.add(30); - adds the int 30 to the end of the list
 - Get the size/length (how many items in the list) // listName.size(); - returns the length of the list as an int
 - Set a specific index to a value (set index 0 to 1) // listName.set(0, 1); - sets the number at index 0 to 1
@@ -8,10 +8,10 @@
 - Add a number at an index (the index u selected and anything after will be shifted forward 1) // listName.add(3, 99) - adds 99 to index 3
 
 
-##MAKING AN ARRAY LIST:
+## MAKING AN ARRAY LIST:
 U have to import ArrayList library for creating an ArrayList if you want to start the list with numbers alr in it
 
-###SYNTAX FOR AN ARRAY LIST
+### SYNTAX FOR AN ARRAY LIST
 ArrayList<datatype> nameOfList = new ArraryList<datatype>();
 therfore an integer Array List would look like
 ArrayList<Integer> listOfIntegers = new ArrayList<Integer>();
@@ -34,7 +34,7 @@ And when u assign an Integer to an int it gets unboxed into an in as it is able 
 THAT MIGHT BE SO CONFUSING SORRY! maybe just watch the lecture for this topic a few times and then read these notes
 
 
-##EXAMPLES
+## EXAMPLES
 
 ArrayList<Integer> list = new ArrayList<Integer>(); // creates an Array List called 'list' which holds Integers 
 list.add(50); // as the list is empty, adds the int 50 to index 0
