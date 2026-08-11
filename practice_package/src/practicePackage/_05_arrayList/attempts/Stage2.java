@@ -2,7 +2,7 @@ package practicePackage._05_arrayList.attempts;
 
 import java.util.ArrayList;
 
-import serviceClasses.*;
+import serviceClasses.MathService;
 
 @SuppressWarnings("unused")
 public class Stage2 {
@@ -15,7 +15,17 @@ public class Stage2 {
 	 * return 0 if list is null or empty
 	 */
 	public static int sumNegatives(ArrayList<Integer> list) {
-		return 0; //to be completed
+		int total = 0;
+		if(list == null || list.size() <= 0){
+			return 0;
+		} else {
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i) < 0) {
+					total += list.get(i);
+				}
+			}
+		}
+		return total;
 	}
 
 	/**
@@ -26,7 +36,16 @@ public class Stage2 {
 	 * return 0 if list is null or empty
 	 */
 	public static int count(ArrayList<Integer> list, int target) {
-		return 0; //to be completed
+		int count = 0;
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i) == target) {
+				count += 1;
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -38,7 +57,16 @@ public class Stage2 {
 	 * return false if list is null or empty
 	 */
 	public static boolean containsInRange(ArrayList<Integer> list, int low, int high) {
-		return false; //to be completed
+		if (list == null || list.size() <= 0) {
+			return false;
+		}
+
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i) >= low && list.get(i) <= high) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -51,7 +79,16 @@ public class Stage2 {
 	 * method isPrime(int) from class MathService as MathService.isPrime(value_to_check)
 	 */
 	public static int countPrimes(ArrayList<Integer> list) {
-		return 0; //to be completed
+		int count = 0;
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		for (int i = 0; i < list.size(); i++) {
+			if(MathService.isPrime(list.get(i))){
+				count += 1;
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -65,9 +102,19 @@ public class Stage2 {
 	 * method isPrime(int) from class MathService as MathService.isPrime(value_to_check) 
 	 */
 	public static boolean allPrimes(ArrayList<Integer> list) {
-		return false; //to be completed
+		if (list == null) {
+			return false;
+		} else if (list.size() <= 0) {
+			return true;
+		} else {
+			for (int i = 0; i < list.size(); i++) {
+				if (MathService.isPrime(list.get(i)) != true) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
-
 	/**
 	 * change each item of the list to its square.
 	 * 
@@ -81,7 +128,13 @@ public class Stage2 {
 	 * if list = [3,0,-2,6], it should become [9, 0, 4, 36]
 	 */
 	public static void squareUp(ArrayList<Integer> list) {
-		//to be completed
+		if (list == null || list.size() <= 0) {
+			
+		} else {
+			for (int i = 0; i < list.size(); i++) {
+				list.set(i, list.get(i) * list.get(i));
+			}
+		}
 	}
 
 	/**
@@ -91,7 +144,17 @@ public class Stage2 {
 	 * return 0 if the list is null
 	 */
 	public static int sumOdd(ArrayList<Integer> list) {
-		return 0; //to be completed
+		int count = 0;
+		if (list == null || list.size() <=0) {
+			return 0;
+		} else {
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i) % 2 != 0) {
+					count += list.get(i);
+				}
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -102,7 +165,16 @@ public class Stage2 {
 	 * return 0 if the list is null
 	 */
 	public static int sumMultiples(ArrayList<Integer> list, int n) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int sum = 0;
+		for (Integer item : list) {
+			if (item % n == 0) {
+				sum += item;
+			}
+		}
+		return sum;
 	}
 
 	/**
@@ -113,7 +185,16 @@ public class Stage2 {
 	 * @return sum of all items of the list passed that lie in the number range [low...high]
 	 */
 	public static int sumInRange(ArrayList<Integer> list, int low, int high) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int total = 0;
+		for (Integer item : list) {
+			if (item >= low && item <= high) {
+				total += item;
+			}
+		}
+		return total;
 	}
 
 	/**
@@ -122,7 +203,14 @@ public class Stage2 {
 	 * @return the sum of all items at even indices of the list passed
 	 */
 	public static int sumEvenIndexedItems(ArrayList<Integer> list) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int sum = 0;
+		for (int i = 0; i < list.size(); i += 2) {
+			sum += list.get(i);
+		}
+		return sum;
 	}
 
 	/**
@@ -131,7 +219,14 @@ public class Stage2 {
 	 * reset any negative value(s) in the list passed to zero.
 	 */
 	public static void resetNegatives(ArrayList<Integer> list) {
-		//to be completed
+		if (list == null) {
+			return;
+		}
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i) < 0) {
+				list.set(i, 0);
+			}
+		}
 	}
 
 	/**
@@ -141,7 +236,16 @@ public class Stage2 {
 	 * return 0 if the list is null.
 	 */
 	public static int countOdd(ArrayList<Integer> list) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int count = 0;
+		for (Integer item : list) {
+			if (item % 2 != 0) {
+				count += 1;
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -151,7 +255,16 @@ public class Stage2 {
 	 * return 0 if the list is null.
 	 */
 	public static int countNegatives(ArrayList<Integer> list) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+		return 0;
+		}
+		int count = 0;
+		for (Integer item : list) {
+			if (item < 0) {
+				count += 1;
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -162,7 +275,16 @@ public class Stage2 {
 	 * return 0 if the list is null.
 	 */
 	public static int countFactors(ArrayList<Integer> list, int n) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+		return 0;
+		}
+		int count = 0;
+		for (Integer item : list) {
+			if (n % item == 0) {
+				count += 1;
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -173,7 +295,16 @@ public class Stage2 {
 	 * return 0 if list is null.
 	 */
 	public static int countOccurrences(ArrayList<Integer> list, int target) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int count = 0;
+		for (Integer item : list) {
+			if (item == target) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	/**
@@ -184,8 +315,19 @@ public class Stage2 {
 	 * @return true if target exists at index startIndex or later in the list passed, false otherwise.
 	 * return false if list is null or target doesn't exist in the list starting at index startIndex.
 	 */
+
+
+
 	public static boolean containsFromIndex(ArrayList<Integer> list, int target, int startIndex) {
-		return false; //to be completed
+		if (list == null || list.size() <= 0) {
+			return false;
+		}
+		for (int i = startIndex; i >= 0 && i < list.size(); i++) {
+			if (list.get(i) == target) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -199,7 +341,18 @@ public class Stage2 {
 
 	 */
 	public static boolean containsBetweenIndices(ArrayList<Integer> list, int target, int startIndex, int endIndex) {
-		return false; //to be completed
+		if (list == null || list.size() <= 0) {
+			return false;
+		}
+
+		//return true if the index of target exists between start and end index
+
+		for (int i = startIndex; i <= endIndex && i >= 0 && i < list.size(); i++) {
+			if (list.get(i) == target) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -209,8 +362,16 @@ public class Stage2 {
 	 * @return sum of all items at index endIndex or lower in the list passed.
 	 * return 0 if list is null.
 	 */
+
 	public static int sumUptoIndex(ArrayList<Integer> list, int endIndex) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int sum = 0;
+		for (int i = 0; i <= endIndex && endIndex <= list.size() - 1; i++) {
+			sum += list.get(i);
+		}
+		return sum;
 	}
 
 	/**
@@ -221,7 +382,16 @@ public class Stage2 {
 	 * return 0 if list is null.
 	 */
 	public static int sumEvenFromIndex(ArrayList<Integer> list, int startIndex) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int sum = 0;
+		for (int i = startIndex; i >= 0 && i < list.size(); i++) {
+			if (list.get(i) % 2 == 0) {
+				sum += list.get(i);
+			}
+		}
+		return sum;
 	}
 
 	/**
@@ -232,7 +402,17 @@ public class Stage2 {
 	 * return 1 if list is null or if no positive items exist up to index endIndex.
 	 */
 	public static int productPositivesUptoIndex(ArrayList<Integer> list, int endIndex) {
-		return 0; //to be completed
+		int sum = 1;
+		if (list == null || list.size() <= 0) {
+			return 1;
+		}
+		for (int i = 0; i <= endIndex && endIndex >= 0 && endIndex < list.size(); i++) {
+			if(list.get(i) > 0){
+				sum *= list.get(i);
+			}
+			
+		}
+		return sum;
 	}
 
 	/**
@@ -245,7 +425,16 @@ public class Stage2 {
 	 * return 0 if list is null or if key doesn't exist between indices startIndex and endIndex. 
 	 */
 	public static int countOccurrencesBetweenIndices(ArrayList<Integer> list, int key, int startIndex, int endIndex) {
-		return 0; //to be completed
+		if (list == null || list.size() <= 0) {
+			return 0;
+		}
+		int count = 0;
+		for (int i = startIndex; i >= 0 && i <= endIndex && i < list.size(); i++) {
+			if (list.get(i) == key) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	/**

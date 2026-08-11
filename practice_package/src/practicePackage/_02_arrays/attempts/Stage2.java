@@ -122,7 +122,13 @@ public class Stage2 {
 	 * update each item of the array to the square of itself.
 	 */
 	public static void squareUp(int[] data) {
-		//to be completed
+		if(data == null || data.length <=0){
+
+		} else {
+			for(int i = 0; i < data.length; i++){
+				data[i] = data[i] * data[i];
+			}
+		}
 	}
 
 	/**
@@ -132,7 +138,17 @@ public class Stage2 {
 	 * return 0 if the array is null.
 	 */
 	public static int countOdd(int[] data) {
-		return 0; //to be completed
+		int total = 0;
+		if (data == null || data.length <= 0) {
+			return 0;
+		} else {
+			for (int i = 0; i < data.length; i++) {
+				if (data[i] % 2 != 0) {
+					total += 1;
+				}
+			}
+			return total;
+		}
 	}
 
 	/**
@@ -162,7 +178,7 @@ public class Stage2 {
 	 * @param low
 	 * @param high
 	 * @return number of items in the array passed that are OUTSIDE the number range [low...high].
-	 * return 0 if the array is null.
+	 * return 0 if the array is null
 	 */
 	public static int countNotInRange(int[] data, int low, int high) {
 		return 0; //to be completed
@@ -341,7 +357,27 @@ public class Stage2 {
 	 * return false if array is null.
 	 */
 	public static boolean isBalanced(int[] data) {
-		return false; //to be completed
+		int countPos = 0;
+		int countNeg = 0;
+
+		if (data == null) {
+			return false;
+		}
+
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] > 0) {
+				countPos++;
+			} else if(data[i] == 0) {
+				return true;
+			} else {
+				countNeg++;
+			}
+		}
+		
+		if (countPos == countNeg || data.length == 0) {
+			return true;
+		}
+		return false;
 	}
 
 	/**

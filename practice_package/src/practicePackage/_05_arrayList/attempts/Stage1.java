@@ -14,7 +14,16 @@ public class Stage1 {
 	 * return the only value if list contains a single item
 	 */
 	public static Integer getSumFirstLastItems(ArrayList<Integer> list) {
-		return null; //to be completed
+		if (list == null || list.size() <= 0) {
+			return null;
+		} else if (list.size() == 1) {
+			return list.get(0);
+		} else {
+			int a = list.get(0);
+			int b = list.get(list.size() - 1);
+			Integer c = a + b;
+			return c;
+		}
 	}
 
 	/**
@@ -25,7 +34,10 @@ public class Stage1 {
 	 * return false if EITHER list is null
 	 */
 	public static boolean sameSize(ArrayList<Integer> a, ArrayList<Integer> b) {
-		return false; //to be completed
+		if (a == null || b == null || (a.size() != b.size())) {
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -35,6 +47,10 @@ public class Stage1 {
 	 * return null if list is null or empty
 	 */
 	public static Rectangle getFirstItem(ArrayList<Rectangle> list) {
-		return null; //to be completed
+		if(list == null || list.size() <= 0){
+			return null;
+		} else {
+			return list.get(0);
+		}
 	}
 }

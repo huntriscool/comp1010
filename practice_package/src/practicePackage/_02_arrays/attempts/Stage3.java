@@ -33,7 +33,15 @@ public class Stage3 {
 	 * return false if either of the array passed is null
 	 */
 	public static boolean mutuallyReverse(int[] a, int[] b) {
-		return false; //to be completed
+		if ((a == null || b == null) || (a.length != b.length)) {
+			return false;
+		}
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] != b[b.length - 1 - i]) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -43,7 +51,13 @@ public class Stage3 {
 	 * return null if n is less than 0
 	 */
 	public static int[] generate(int n) {
-		return new int[0]; //to be completed
+		if (n < 0) return null;
+
+		int[] newArr = new int[n];
+		for (int i = 0; i < n; i++) {
+			newArr[i] = i + 1;
+		}
+		return newArr;
 	}
 
 	/**
@@ -54,7 +68,23 @@ public class Stage3 {
 	 * You may assume that array passed is NOT null
 	 */
 	public static int getMostFrequentItem(int[] data) {
-		return 0; //to be completed
+		int mostFreq = data[0];
+		int bestCount = 0;
+
+		for (int i = 0; i < data.length; i++) {
+			int count = 0;
+			for (int j = 0; j < data.length; j++) {
+				if (data[i] == data[j]) {
+					count++;
+				}
+			}
+			if (count > bestCount) {
+				bestCount = count;
+				mostFreq = data[i];
+			}
+		}
+
+		return mostFreq;
 	}
 
 	/**
@@ -86,7 +116,27 @@ public class Stage3 {
 	 * return an empty array if array passed is empty
 	 */
 	public static int[] getPositives(int[] data) {
-		return new int[0]; //to be completed
+    if (data == null) {
+        return null;
+    }
+
+    int count = 0;
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] > 0) {
+				count += 1;
+			}
+		}
+
+		int[] newArr = new int[count];
+		int k = 0;
+		for (int j = 0; j < data.length; j++) {
+			if (data[j] > 0) {
+				newArr[k] = data[j];
+				k++;
+			}
+		}
+
+		return newArr;
 	}
 
 	/**

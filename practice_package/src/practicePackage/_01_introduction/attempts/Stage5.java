@@ -10,7 +10,20 @@ public class Stage5 {
 	 * return false if the array is null.
 	 */
 	public static boolean containsPositive(int[] data) {
-		return false; //to be completed
+		int count = 0;
+		if (data == null || data.length <= 0) {
+			return false;
+		}
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] > 0) {
+				count += 1;
+			}
+		}
+		if (count >= 1)
+			return true;
+
+		return false;
+		
 	}
 
 	/**
