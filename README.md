@@ -1,7 +1,7 @@
-# comp1010
-all my work throughout ts unit (;
+# COMP1010
+all my work throughout ts unit (:
 
-most of my practice is in the practice package, there also might just be nothing in some of the folders soz
+I used the practice package to practice code all throughout the semester
 
-FOLDERS THAT HAVE NOTES:
-- week 3
+ALSO for the package i gitignored the bin folder (compiled files), doesnt matter, 
+and the lib folder (contains the jar file needed for vs code), DOES MATTER MAKE SURE U SET THIS UP IN VSCODE
