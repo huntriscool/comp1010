@@ -444,7 +444,20 @@ public class Stage2 {
 	 * return false if the list is null.
 	 */
 	public static boolean allPositives(ArrayList<Integer> list) {
-		return false; //to be completed
+		int count = 0;
+		if(list == null){
+			return false;
+		}
+		for (Integer item : list) {
+			if (item > 0) {
+				count++;
+			}
+		}
+		if (count >= list.size()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -454,7 +467,20 @@ public class Stage2 {
 	 * return false if the list is null.
 	 */
 	public static boolean allZeroes(ArrayList<Integer> list) {
-		return false; //to be completed
+		if (list == null) {
+			return false;
+		}
+		int count = 0;
+		for (Integer item : list) {
+			if (item == 0) {
+				count++;
+			}
+		}
+		if (count >= list.size()) {
+			return true;
+		}
+		return false;
+
 	}
 
 	/**
@@ -464,7 +490,15 @@ public class Stage2 {
 	 * return false if the list is null.
 	 */
 	public static boolean containsPositive(ArrayList<Integer> list) {
-		return false; //to be completed
+		if (list == null) {
+			return false;
+		}
+		for (Integer item : list) {
+			if (item > 0) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -474,7 +508,16 @@ public class Stage2 {
 	 * return false if the list is null.
 	 */
 	public static boolean containsZero(ArrayList<Integer> list) {
-		return false; //to be completed
+				if(list == null || list.size() <= 0){
+			return false;
+		} else {
+			for(Integer item : list){
+				if(item == 0){
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -484,8 +527,23 @@ public class Stage2 {
 	 * return false if the list is null.
 	 */
 	public static boolean isAscending(ArrayList<Integer> list) {
-		return false; //to be completed
+		if (list == null) {
+			return false;
+		} else if (list.size() == 1 || list.size() <=0) {
+			return true;
+		}
+
+		int temp = 0;
+		while (temp < list.size() - 1) {
+			if (list.get(temp) <= list.get(temp + 1)) {
+				temp++;
+			} else {
+				return false;
+			}
+		}
+		return true;
 	}
+	
 
 	/**
 	 * 
@@ -494,7 +552,24 @@ public class Stage2 {
 	 * return false if the list is null.
 	 */
 	public static boolean isUnchanged(ArrayList<Integer> list) {
-		return false; //to be completed
+		if(list == null){
+			return false;
+		} else if (list.size() <= 0) {
+			return true;
+		} else if (list.size() == 1) {
+			return true;
+		}
+		int count = 0;
+		for (int i = 0; i < list.size() - 1; i++) {
+			if (list.get(i) == list.get(i + 1)) {
+				count++;
+			}
+		}
+		if (count >= list.size() - 1) {
+			return true;
+		}
+		return false;
+		
 	}
 
 	/**
@@ -504,7 +579,32 @@ public class Stage2 {
 	 * return false if list is null.
 	 */
 	public static boolean isBalanced(ArrayList<Integer> list) {
-		return false; //to be completed
+		int countPos = 0;
+		int countNeg = 0;
+
+		if (list == null) {
+			return false;
+		} else if (list.size() <= 0) {
+			return true;
+		} else if (list.size() == 1) {
+			return false;
+		}
+
+		for (Integer item : list) {
+			if (item > 0) {
+				countPos++;
+			} else if (item == 0) {
+				countPos++;
+				countNeg++;
+			}
+			 else {
+				countNeg++;
+			}
+		}
+		if (countPos == countNeg) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -514,7 +614,16 @@ public class Stage2 {
 	 * return false if list is null.
 	 */
 	public static boolean containsDigit(ArrayList<Character> list) {
-		return false; //to be completed
+		if (list == null) {
+			return false;
+		}
+
+		for (Character item : list) {
+			if (Character.isDigit(item)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
