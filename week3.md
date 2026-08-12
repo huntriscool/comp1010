@@ -12,16 +12,16 @@
 U have to import ArrayList library for creating an ArrayList if you want to start the list with numbers alr in it  
   
 ### SYNTAX FOR AN ARRAY LIST  
-ArrayList<datatype> nameOfList = new ArraryList<datatype>();  
+ArrayList\<datatype> nameOfList = new ArraryList\<datatype>();  
 therfore an integer Array List would look like  
-ArrayList<Integer> listOfIntegers = new ArrayList<Integer>();  
+ArrayList\<Integer> listOfIntegers = new ArrayList\<Integer>();  
   
-- <Integer> is a generic(whatever is inside of the pointy brackets is the data that will be held in the array list) if that makes any sence lol  
+- \<Integer> is a generic(whatever is inside of the pointy brackets is the data that will be held in the array list) if that makes any sence lol  
   
 - Integer is different to int (basically Integer is a wrapper class which holds an int inside of it)  
   - same goes with Boolean and boolean and Double and double etc etc  
   
-- The reason it is ArrayList<Integer> and not ArrayList<int> is because array lists only hold objects not perimitive data  
+- The reason it is ArrayList\<Integer> and not ArrayList\<int> is because array lists only hold objects not perimitive data  
   - int, boolean, double, etc, are all perimitve data types which cant be used in an array  
     - HOWEVER! Integer is a wrapper class (which is an object) that holds an int..... more later  
   
@@ -36,7 +36,7 @@ THAT MIGHT BE SO CONFUSING SORRY! maybe just watch the lecture for this topic a 
   
 ## EXAMPLES  
   
-ArrayList<Integer> list = new ArrayList<Integer>(); // creates an Array List called 'list' which holds Integers   
+ArrayList\<Integer> list = new ArrayList\<Integer>(); // creates an Array List called 'list' which holds Integers   
 list.add(50); // as the list is empty, adds the int 50 to index 0  
 list.add(70); // as the list has 1 item, adds the int 70 to idex 1  
 list.add(90); // yk how this works now  
