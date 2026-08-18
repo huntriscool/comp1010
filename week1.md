@@ -53,3 +53,20 @@ while(count < 5){
 count = ??
 
 ### Arrays
+
+- Arrays hold multiple values of 1 data type
+- Lets say u have 4 assessments and want to store each mark in one place, an array is how you do that!
+- Syntax is _dataType[] arrayName = new dataType[arraySize]_
+  - An array that holds 5 different int's would look like
+    - _int[] array1 = new int[5];_
+  - An array that holds 3 different String's would look like
+    - _String[] array2 = new String[3];_
+
+- To access an item in the array use arrayName[indexOfValue]
+  - e.g. u want the **second** item in an array called marks
+    - _int mark2 = marks[1];_ // the reason its 1 not 2 is beacause index's start counting from 0
+      - So the first item of an array is arr[0], second item is arr[1], e.t.c
+
+# HOMEWORK
+
+## ANSWER ALL QUESTIONS IN PRACTICE PACKAGE INTRO FOLDER STAGE 1 & 2
