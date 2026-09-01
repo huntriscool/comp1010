@@ -1,17 +1,26 @@
-import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-    }
+        //sets min sec hour to current local time
+        LocalTime nowTime = LocalTime.now();
+        int min = nowTime.getMinute();
+        int sec = nowTime.getSecond();
+        int hour = nowTime.getHour();
 
-    public static void printStudentMarks(ArrayList<ArrayList<Integer>> marks) {
-        // marks = [[10, 70, 20], [-20, 30, 20], [10,20]]
-        for (int i = 0; i < marks.size(); i++) {
-            ArrayList<Integer> currentStudentMarks = marks.get(i);
-            for (int j = 0; j < currentStudentMarks.size(); j++) {
-                System.out.print(currentStudentMarks.get(i));
-            }
-        }
+        //sets day mon year to current local date
+        LocalDate nowDate = LocalDate.now();
+        int day = nowDate.getDayOfMonth();
+        int month = nowDate.getMonthValue();
+        int year = nowDate.getYear();
+
+        //sets current time and date
+        Time currentTime = new Time(sec, min, hour);
+        Date currentDate = new Date(day, month, year);
+        DateTime currentDateTime = new DateTime(currentDate, currentTime);
+
+        //prints current date time
+        System.out.println(currentDateTime);
     }
 }
