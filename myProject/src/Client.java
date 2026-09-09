@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class App {
+public class Client {
     public static void main(String[] args) throws Exception {
         //sets min sec hour to current local time
         LocalTime nowTime = LocalTime.now();
