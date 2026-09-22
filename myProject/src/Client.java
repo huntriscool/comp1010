@@ -22,5 +22,13 @@ public class Client {
 
         //prints current date time
         System.out.println(currentDateTime);
+        
+        //Make people and birthdates
+        Budget mattsBudget = new Budget(90);
+        Person Matthew = new Person("Matthew", "Justic", mattsBudget);
+        Date jan9 = new Date(9, 1, 2008);
+
+        Birthdate mattsBday = new Birthdate(Matthew, jan9);
+        System.out.println(mattsBday);
     }
 }
