@@ -16,7 +16,10 @@ public class Stage3 {
 	 * return -1 if list is null or target doesn't exist TWICE in the list.
 	 */
 	public static int secondLastIndexOf(ArrayList<Integer> list, int target) {
-		return 0; //to be completed
+		if (list == null) {
+			return -1;
+		}
+		return 0;
 	}
 
 	/**

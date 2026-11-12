@@ -10,7 +10,7 @@ public class Stage3 {
 	 * 
 	 */
 	public static int countUniqueItems(int[] data) {
-		return 0; //to be completed
+		return 0;
 	}
 
 	/**
@@ -22,7 +22,7 @@ public class Stage3 {
 	 * return false if either of array passed is null
 	 */
 	public static boolean contains(int[] a, int[] b) {
-		return false; //to be completed
+		return false;
 	}
 
 	/**
@@ -147,7 +147,26 @@ public class Stage3 {
 	 * return an empty array if array passed is empty
 	 */
 	public static int[] getNonZeroes(int[] data) {
-		return new int[0]; //to be completed
+		if (data == null) {
+			return null;
+		} else if (data.length <= 0) {
+			return new int[0];
+		}
+		int count = 0;
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] != 0) {
+				count++;
+			}
+		}
+		int temp = 0;
+		int[] newArr = new int[count];
+		for (int j = 0; j < data.length; j++) {
+			if (data[j] != 0) {
+				newArr[temp] = data[j];
+				temp++;
+			}
+		}
+		return newArr;
 	}
 
 	/**
